@@ -94,3 +94,89 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* --- TicTacToe Classic Minimalist UI --- */
+
+.ttt-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.ttt-status {
+  font-size: 1.5rem;
+  margin-bottom: 1.25rem;
+  color: #000000;
+  letter-spacing: 0.03em;
+  font-weight: 500;
+}
+
+.ttt-board {
+  display: grid;
+  grid-template-columns: repeat(3, 3.5rem);
+  grid-template-rows: repeat(3, 3.5rem);
+  gap: 0.7rem;
+  background: #fff;
+  border-radius: 1em;
+  box-shadow: 0 0 10px #0001;
+  margin-bottom: 1.7rem;
+}
+
+.ttt-cell {
+  background: #ffffff;
+  border: 2px solid #2196f3;
+  border-radius: 0.6em;
+  font-size: 2.2rem;
+  color: #000000;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  outline: none;
+  transition: border 0.2s, background 0.2s;
+  user-select: none;
+  aspect-ratio: 1/1;
+}
+
+.ttt-cell:disabled {
+  cursor: not-allowed;
+  background: #e8f1fa;
+  color: #2196f3;
+  opacity: 0.63;
+}
+
+.ttt-cell:not(:disabled):hover, .ttt-cell:focus-visible {
+  border: 2px solid #000000;
+}
+
+.ttt-restart {
+  margin-top: 0.5em;
+  padding: 0.7em 2.1em;
+  font-size: 1.02rem;
+  border-radius: 0.5em;
+  border: 1.7px solid #2196f3;
+  background: #2196f3;
+  color: #fff;
+  font-weight: 500;
+  transition: background 0.12s, color 0.12s, border 0.12s;
+  cursor: pointer;
+  letter-spacing: 0.04em;
+}
+.ttt-restart:hover, .ttt-restart:focus-visible {
+  background: #fff;
+  color: #2196f3;
+  border: 1.7px solid #000000;
+}
+
+/* Minimalism: Remove shadow for dark bg */
+@media (prefers-color-scheme: dark) {
+  .ttt-board {
+    background: #181818;
+    box-shadow: 0 0 4px #0003;
+  }
+}
+

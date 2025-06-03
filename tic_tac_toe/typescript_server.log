@@ -8,3 +8,5 @@
   ➜  Local:   http://localhost:3000/
   ➜  Network: http://172.17.0.2:3000/
 11:00:25 PM [vite] (client) page reload src/main.ts
+11:00:32 PM [vite] (client) hmr update /src/style.css
+11:00:33 PM [vite] (client) page reload src/counter.ts
