@@ -20,6 +20,7 @@ export default [
   },
   {
     files: ["**/*.ts", "**/*.tsx"],
+    ignores: ["vite.config.ts"], // Exclude config file from TS lint
     languageOptions: {
       parser: tsParser,
       parserOptions: {
