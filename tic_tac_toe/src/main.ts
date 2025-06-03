@@ -1,24 +1,15 @@
-import './style.css'
-import typescriptLogo from './typescript.svg'
-import viteLogo from '/vite.svg'
-import { setupCounter } from './counter.ts'
+import "./style.css";
+import { TicTacToeGame } from "./tictactoe";
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`
+// Remove template content and initialize game
+const appDiv = document.querySelector<HTMLDivElement>("#app");
+if (appDiv) {
+  // Create a container div for centering, game UI will be inside
+  const tttContainer = document.createElement("div");
+  tttContainer.className = "ttt-container";
+  appDiv.innerHTML = ""; // Remove template demo content
+  appDiv.appendChild(tttContainer);
 
-setupCounter(document.querySelector<HTMLButtonElement>('#counter')!)
+  // Instantiate the game UI
+  new TicTacToeGame(tttContainer);
+}
